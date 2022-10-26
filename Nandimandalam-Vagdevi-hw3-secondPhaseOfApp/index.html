@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" href="jemdoc.css" type="text/css">
+  <title>Vagdevi</title>
+  <style>
+
+    #resume-container{
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      margin-top: 20px;
+      background-color: black;
+      width: fit-content;
+      padding: 10px;
+      
+    }
+
+    #resume-container a{
+      text-decoration: none;
+      color: #F8F3E7;
+    }
+
+   
+
+  </style>
+</head>
+
+<body style="background-color: #F8F3E7">
+  <table summary="Table for page layout." id="tlayout">
+    <tr valign="top">
+      <td id="layout-content">
+        <table width="700" height="20" class="imgtable">
+          <tr>
+            <td width="372">
+              <img src="photo.jpeg" alt="Vagdevi" width="250px">&nbsp;
+            </td>
+            <td width="800" align="left">
+              <p>
+              <h1>Vagdevi Nandimandalam</h1><br />
+              <b>Masters in Computer Science</b> <br />
+              <b>University of Massachusetts Lowell, MA, USA</b> <br />
+              <b>Geethanjali College of Engineering and Technology, TS, INDIA</b> <br />
+              <br />
+              </p>
+              <p>
+                Home: 130 Crawford st <br />
+                Cell phone: 774-473-3157 <br />
+                vagdevi_nandimandalam@student.uml.edu <br />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <hr>
+        </hr>
+        <h1>Introduction</h1>
+        <p> This is a basic webpage I created to display my details. I am Vagdevi Nandimandalam pursuing my
+          master's in computer science. I completed my undergraduation in Electronics and communication
+          engineering and have done few projects which are not related to my stream. Irrespective of my stream
+          I always tried to learn new things, now I'm trying to develop an mobile app which is completely a
+          new experience. </p>
+        <h2>Courses I have enrolled:</h2>
+        <ul>
+
+          <li>
+            <p> Computer Networks and Forensics </p>
+          </li>
+
+          <li>
+            <p> Internet and Web Systems </p>
+          </li>
+
+          <li>
+            <p> Internet of Things </p>
+          </li>
+        </ul>
+        <h2>Facts about me:</h2>
+        <ul>
+
+          <li>
+            <p> Foodie </p>
+          </li>
+
+          <li>
+            <p> I like doing adventures with my friends </p>
+          </li>
+
+          <li>
+            <p> Love travelling </p>
+          </li>
+          <hr>
+          </hr>
+
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+          <body>
+
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+              var xValues = ["Stocks", "Cash", "Gold", "Assets", "Bonds"];
+              var yValues = [55, 49, 44, 24, 15];
+              var barColors = [
+                "#b91d47",
+                "#00aba9",
+                "#2b5797",
+                "#e8c3b9",
+                "#1e7145"
+              ];
+
+              new Chart("myChart", {
+                type: "doughnut",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: "Investment Portfolio"
+                  }
+                }
+              });
+            </script>
+<hr>
+            <ul>
+
+
+
+
+
+              <h2 align="center"> Fill out the details in the form!</h2>
+              <center>
+                <form method="POST" action="google-sheet" name="google-sheet">
+                  <label for="fname">First name:</label><br>
+                  <input align="center" type="text" id="fname" name="First name"><br>
+                  <br>
+
+                  <label for="lname">Last name:</label><br>
+                  <input align="center" type="text" id="lname" name="Last name">
+                  <br>
+                  <br>
+                  <label for="email">Email address:</label><br>
+                  <input type="email" id="email" name="Email address">
+
+                  <br>
+                  <br>
+                  <label for="pbirth">Place of Birth:</label><br>
+                  <input type="text" id="Pbirth" name="Place of Birth">
+                  <br>
+                  <br>
+
+                  <label for="Country">Country:</label><br>
+                  <input type="text" id="Country" name="Country">
+                  <br>
+                  <br>
+
+                  <input type="submit" value="Submit">
+                </form>
+              </center>
+
+              <div id="resume-container">
+                <a id="resume" href="Resume.pdf" target=_blank> My Resume </a>
+                </div>
+
+              <div id="footer">
+                <div id="footer-text">
+                </div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/1lZc5I3VMvevHripETfCCRCAGwYHQC7UP52msaV0UiWI/edit#gid=0"> Data in google sheet</a>
+      </td>
+    </tr>
+  </table>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwOUImY82mN-RWGlYbo--DNFDCAsFjOECoou5s5b58rLUOHEuXWO_FzIM8eqTVDUtbwDQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
